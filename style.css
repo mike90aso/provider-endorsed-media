@@ -213,7 +213,7 @@ nav a:hover {
 }
 
 .network-number {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 800;
   color: var(--white);
   margin-bottom: 0.5rem;
@@ -222,7 +222,7 @@ nav a:hover {
 }
 
 .network-label {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 800;
   color: var(--white);
   line-height: 1;
