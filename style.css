@@ -184,7 +184,7 @@ nav a:hover {
 }
 
 .section-text.emphasis {
-  font-size: 1.5rem;
+  font-size: 1.625rem;
   font-weight: 600;
   color: var(--orange);
   margin-top: 2rem;
