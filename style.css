@@ -111,6 +111,14 @@ nav a:hover {
   color: var(--orange);
 }
 
+.hero-logo {
+  display: block;
+  max-width: 220px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto 1.5rem;
+}
+
 .hero-description {
   font-size: 1.25rem;
   color: var(--text-light);
