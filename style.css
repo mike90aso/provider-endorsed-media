@@ -460,6 +460,14 @@ nav a:hover {
   box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
 }
 
+.cta-logo {
+  display: block;
+  max-width: 180px;
+  width: 100%;
+  height: auto;
+  margin: 1.5rem auto 0;
+}
+
 /* Footer */
 footer {
   background: var(--navy-dark);
