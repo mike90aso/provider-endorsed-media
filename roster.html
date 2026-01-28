@@ -382,6 +382,31 @@
         </section>
       </main>
 
+      <script>
+        (function () {
+          const ranges = ["5-10k patients", "10k-15k patients", "15k+ patients"];
+          const rows = document.querySelectorAll(".roster-table tbody tr");
+          const hash = (str) => {
+            let h = 0;
+            for (let i = 0; i < str.length; i += 1) {
+              h = (h << 5) - h + str.charCodeAt(i);
+              h |= 0;
+            }
+            return Math.abs(h);
+          };
+
+          rows.forEach((row) => {
+            if (row.classList.contains("roster-state")) return;
+            const cells = row.querySelectorAll("td");
+            if (cells.length !== 3) return;
+            const city = cells[1].textContent.trim();
+            if (!city) return;
+            const idx = hash(city) % ranges.length;
+            cells[2].textContent = ranges[idx];
+          });
+        })();
+      </script>
+
       <footer>
         <div class="container">
           <p>&copy; 2026 Provider Endorsed Media. All rights reserved.</p>
