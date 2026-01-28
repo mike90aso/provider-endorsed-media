@@ -482,6 +482,55 @@ footer .container {
   max-width: 1200px;
 }
 
+/* Roster Page */
+.roster-section {
+  background: var(--navy-dark);
+}
+
+.roster-table-wrapper {
+  margin-top: 2rem;
+  overflow-x: auto;
+}
+
+.roster-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 640px;
+  background: var(--navy-medium);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.roster-table thead th {
+  text-align: left;
+  padding: 1rem;
+  font-size: 0.95rem;
+  color: var(--text-light);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--navy-dark);
+}
+
+.roster-table td {
+  padding: 0.9rem 1rem;
+  color: var(--text-light);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.roster-table .roster-state td {
+  background: var(--orange);
+  color: var(--white);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.roster-table tr td:first-child {
+  width: 24px;
+}
+
+.roster-table tr:last-child td {
+  border-bottom: none;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .hero-title {
