@@ -531,6 +531,11 @@ footer .container {
   border-bottom: none;
 }
 
+.start-immediate {
+  color: #22c55e;
+  font-weight: 700;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .hero-title {

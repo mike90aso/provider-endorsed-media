@@ -360,6 +360,7 @@
                   <tr><td></td><td>Tacoma</td><td>5,000–15,000 patients</td></tr>
                   <tr><td></td><td>Vancouver</td><td>5,000–15,000 patients</td></tr>
                   <tr><td></td><td>Bellevue</td><td>5,000–15,000 patients</td></tr>
+                  <tr><td></td><td>Renton</td><td>5,000–15,000 patients</td></tr>
 
                   <!-- WEST VIRGINIA -->
                   <tr class="roster-state"><td colspan="4">West Virginia</td></tr>
@@ -387,6 +388,42 @@
         (function () {
           const ranges = ["5-10k patients", "10k-15k patients", "15k+ patients"];
           const rows = document.querySelectorAll(".roster-table tbody tr");
+          const immediateCities = new Set([
+            "orlando",
+            "jacksonville",
+            "miami",
+            "tampa",
+            "west palm beach",
+            "port st lucie",
+            "winter haven",
+            "indianapolis",
+            "wichita",
+            "boston",
+            "cincinnati",
+            "chattanooga",
+            "lincoln",
+            "atlanta",
+            "portland",
+            "san diego",
+            "fort worth",
+            "dallas",
+            "san antonio",
+            "memphis",
+            "phoenix",
+            "los angeles",
+            "sacramento",
+            "stockton",
+            "modesto",
+            "anaheim",
+            "chicago",
+            "richmond",
+            "renton",
+            "tallahassee",
+            "arlington",
+            "omaha",
+            "aurora",
+            "denver"
+          ]);
           const hash = (str) => {
             let h = 0;
             for (let i = 0; i < str.length; i += 1) {
@@ -405,7 +442,11 @@
             const idx = hash(city) % ranges.length;
             cells[2].textContent = ranges[idx];
             const startCell = document.createElement("td");
-            startCell.textContent = "30-60 days";
+            if (immediateCities.has(city.toLowerCase())) {
+              startCell.innerHTML = "<span class=\"start-immediate\">✓ Immediate</span>";
+            } else {
+              startCell.textContent = "30-60 days";
+            }
             row.appendChild(startCell);
           });
         })();
