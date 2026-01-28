@@ -489,7 +489,7 @@ footer .container {
 
 .roster-table-wrapper {
   margin-top: 2rem;
-  overflow-x: visible;
+  overflow-x: hidden;
 }
 
 .roster-table {
@@ -502,8 +502,8 @@ footer .container {
 
 .roster-table thead th {
   text-align: left;
-  padding: 1rem;
-  font-size: 0.95rem;
+  padding: 1.1rem 1.2rem;
+  font-size: 1rem;
   color: var(--text-light);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   background: var(--navy-dark);
@@ -514,11 +514,16 @@ footer .container {
 }
 
 .roster-table td {
-  padding: 0.9rem 1rem;
+  padding: 1rem 1.2rem;
   color: var(--text-light);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   word-break: break-word;
   white-space: normal;
+}
+
+.roster-table thead th,
+.roster-table td {
+  width: 33.333%;
 }
 
 .roster-table .roster-state td {
@@ -530,10 +535,14 @@ footer .container {
 }
 
 .roster-table tr td:first-child {
-  width: 24px;
+  width: auto;
 }
 
 .roster-table td:first-child:empty {
+  display: none;
+}
+
+.roster-table td:first-child {
   display: none;
 }
 
@@ -549,8 +558,8 @@ footer .container {
 @media (max-width: 768px) {
   .roster-table thead th,
   .roster-table td {
-    padding: 0.6rem 0.75rem;
-    font-size: 0.85rem;
+    padding: 0.7rem 0.8rem;
+    font-size: 0.9rem;
   }
 }
 
