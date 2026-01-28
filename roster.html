@@ -28,6 +28,7 @@
                     <th>State</th>
                     <th>City</th>
                     <th>Reach / Total Patients</th>
+                    <th>Available Start Date</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -403,6 +404,9 @@
             if (!city) return;
             const idx = hash(city) % ranges.length;
             cells[2].textContent = ranges[idx];
+            const startCell = document.createElement("td");
+            startCell.textContent = "30-60 days";
+            row.appendChild(startCell);
           });
         })();
       </script>
