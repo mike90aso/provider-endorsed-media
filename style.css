@@ -489,13 +489,13 @@ footer .container {
 
 .roster-table-wrapper {
   margin-top: 2rem;
-  overflow-x: auto;
+  overflow-x: visible;
 }
 
 .roster-table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 640px;
+  table-layout: fixed;
   background: var(--navy-medium);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -509,10 +509,16 @@ footer .container {
   background: var(--navy-dark);
 }
 
+.roster-table thead th:first-child {
+  display: none;
+}
+
 .roster-table td {
   padding: 0.9rem 1rem;
   color: var(--text-light);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  word-break: break-word;
+  white-space: normal;
 }
 
 .roster-table .roster-state td {
@@ -527,6 +533,10 @@ footer .container {
   width: 24px;
 }
 
+.roster-table td:first-child:empty {
+  display: none;
+}
+
 .roster-table tr:last-child td {
   border-bottom: none;
 }
@@ -534,6 +544,14 @@ footer .container {
 .start-immediate {
   color: #22c55e;
   font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .roster-table thead th,
+  .roster-table td {
+    padding: 0.6rem 0.75rem;
+    font-size: 0.85rem;
+  }
 }
 
 /* Responsive Design */
