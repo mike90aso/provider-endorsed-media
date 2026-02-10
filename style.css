@@ -534,6 +534,10 @@ nav a:hover {
   text-align: center;
 }
 
+.media-kit-note {
+  margin-top: 1.75rem;
+}
+
 .footer-logo {
   display: block;
   max-width: 160px;
