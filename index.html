@@ -174,6 +174,34 @@
               <li>Availability & pricing</li>
             </ul>
             <button type="button" class="cta-button" id="open-media-kit">Request Media Kit</button>
+            <div class="media-kit-inline" id="media-kit-inline">
+              <h3 class="media-kit-inline-title">Request Media Kit</h3>
+              <form name="media-kit" method="POST" action="/media-kit-success.html" data-netlify="true" data-netlify-honeypot="bot-field" class="modal-form">
+                <input type="hidden" name="form-name" value="media-kit" />
+                <p style="display: none;">
+                  <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+                </p>
+                <div class="modal-field">
+                  <label for="media-name-inline">Name</label>
+                  <input id="media-name-inline" name="name" type="text" required />
+                </div>
+                <div class="modal-field">
+                  <label for="media-company-inline">Company</label>
+                  <input id="media-company-inline" name="company" type="text" required />
+                </div>
+                <div class="modal-field">
+                  <label for="media-phone-inline">Phone Number</label>
+                  <input id="media-phone-inline" name="phone" type="tel" required />
+                </div>
+                <div class="modal-field">
+                  <label for="media-email-inline">Email</label>
+                  <input id="media-email-inline" name="email" type="email" required />
+                </div>
+                <div class="modal-actions">
+                  <button class="cta-button" type="submit">Submit</button>
+                </div>
+              </form>
+            </div>
             <p class="section-text media-kit-note">Or schedule a 15 minute exploratory call below.</p>
             <iframe
               src="https://providerendorsedmedia.setmore.com/services/8c3a7633-6b28-4ede-8275-47d0ac248c65?step=time-slot&type=service&staff=6346318e-ca90-4152-b2be-148e56468ab3&staffSelected=true"
@@ -231,6 +259,8 @@
       const openButton = document.getElementById("open-media-kit");
       const modal = document.getElementById("media-kit-modal");
       const closeButton = document.getElementById("close-media-kit");
+      const inlineForm = document.getElementById("media-kit-inline");
+      const mobileQuery = window.matchMedia("(max-width: 640px)");
 
       const openModal = () => {
         modal.classList.add("is-open");
@@ -244,7 +274,14 @@
         document.body.style.overflow = "";
       };
 
-      openButton.addEventListener("click", openModal);
+      openButton.addEventListener("click", () => {
+        if (mobileQuery.matches) {
+          inlineForm.classList.toggle("is-open");
+          inlineForm.scrollIntoView({ behavior: "smooth", block: "start" });
+          return;
+        }
+        openModal();
+      });
       closeButton.addEventListener("click", closeModal);
       modal.addEventListener("click", (event) => {
         if (event.target === modal) {

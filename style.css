@@ -537,14 +537,45 @@ nav a:hover {
   text-align: center;
 }
 
+.media-kit-inline {
+  display: none;
+  margin: 1.5rem auto 0;
+  max-width: 560px;
+  padding: 1.5rem;
+  background: var(--navy-medium);
+  border-radius: 12px;
+  border: 2px solid rgba(245, 158, 11, 0.3);
+  text-align: left;
+}
+
+.media-kit-inline.is-open {
+  display: block;
+}
+
+.media-kit-inline-title {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--white);
+  text-align: center;
+}
+
 .media-kit-note {
   margin-top: 1.75rem;
 }
 
 @media (max-width: 640px) {
+  .modal {
+    display: none !important;
+  }
+
   .modal-content {
     margin: 1rem auto;
     padding: 1.5rem;
+  }
+
+  .media-kit-inline {
+    display: block;
   }
 
   .modal-field input {
