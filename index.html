@@ -173,8 +173,7 @@
               <li>Campaign examples</li>
               <li>Availability & pricing</li>
             </ul>
-            <button type="button" class="cta-button" id="open-media-kit">Request Media Kit</button>
-            <div class="media-kit-inline" id="media-kit-inline">
+            <div class="media-kit-inline is-open" id="media-kit-inline">
               <h3 class="media-kit-inline-title">Request Media Kit</h3>
               <form name="media-kit" method="POST" action="/media-kit-success.html" data-netlify="true" data-netlify-honeypot="bot-field" class="modal-form">
                 <input type="hidden" name="form-name" value="media-kit" />
@@ -214,40 +213,6 @@
         </section>
       </main>
 
-      <div class="modal" id="media-kit-modal" aria-hidden="true" role="dialog" aria-modal="true">
-        <div class="modal-content">
-          <div class="modal-header">
-            <div class="modal-title">Request Media Kit</div>
-            <button type="button" class="modal-close" id="close-media-kit" aria-label="Close">×</button>
-          </div>
-          <form name="media-kit" method="POST" action="/media-kit-success.html" data-netlify="true" data-netlify-honeypot="bot-field" class="modal-form">
-            <input type="hidden" name="form-name" value="media-kit" />
-            <p style="display: none;">
-              <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
-            </p>
-            <div class="modal-field">
-              <label for="media-name">Name</label>
-              <input id="media-name" name="name" type="text" required />
-            </div>
-            <div class="modal-field">
-              <label for="media-company">Company</label>
-              <input id="media-company" name="company" type="text" required />
-            </div>
-            <div class="modal-field">
-              <label for="media-phone">Phone Number</label>
-              <input id="media-phone" name="phone" type="tel" required />
-            </div>
-            <div class="modal-field">
-              <label for="media-email">Email</label>
-              <input id="media-email" name="email" type="email" required />
-            </div>
-            <div class="modal-actions">
-              <button class="cta-button" type="submit">Submit</button>
-            </div>
-          </form>
-        </div>
-      </div>
-
       <footer>
         <div class="container">
           <p>&copy; 2026 Provider Endorsed Media. All rights reserved.</p>
@@ -255,44 +220,5 @@
         </div>
       </footer>
     </div>
-    <script>
-      const openButton = document.getElementById("open-media-kit");
-      const modal = document.getElementById("media-kit-modal");
-      const closeButton = document.getElementById("close-media-kit");
-      const inlineForm = document.getElementById("media-kit-inline");
-      const mobileQuery = window.matchMedia("(max-width: 640px)");
-
-      const openModal = () => {
-        modal.classList.add("is-open");
-        modal.setAttribute("aria-hidden", "false");
-        document.body.style.overflow = "hidden";
-      };
-
-      const closeModal = () => {
-        modal.classList.remove("is-open");
-        modal.setAttribute("aria-hidden", "true");
-        document.body.style.overflow = "";
-      };
-
-      openButton.addEventListener("click", () => {
-        if (mobileQuery.matches) {
-          inlineForm.classList.toggle("is-open");
-          inlineForm.scrollIntoView({ behavior: "smooth", block: "start" });
-          return;
-        }
-        openModal();
-      });
-      closeButton.addEventListener("click", closeModal);
-      modal.addEventListener("click", (event) => {
-        if (event.target === modal) {
-          closeModal();
-        }
-      });
-      document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape" && modal.classList.contains("is-open")) {
-          closeModal();
-        }
-      });
-    </script>
   </body>
 </html>

@@ -460,56 +460,6 @@ nav a:hover {
   box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
 }
 
-.modal {
-  position: fixed;
-  inset: 0;
-  background: rgba(10, 12, 18, 0.7);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 1.5rem;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  z-index: 1000;
-}
-
-.modal.is-open {
-  display: flex;
-}
-
-.modal-content {
-  width: 100%;
-  max-width: 520px;
-  background: var(--navy-medium);
-  border-radius: 14px;
-  padding: 2rem;
-  border: 2px solid rgba(245, 158, 11, 0.3);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
-  margin: 1.5rem auto;
-}
-
-.modal-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.modal-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--white);
-}
-
-.modal-close {
-  background: transparent;
-  border: none;
-  color: var(--text-light);
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-
 .modal-form {
   display: grid;
   gap: 1rem;
@@ -565,15 +515,6 @@ nav a:hover {
 }
 
 @media (max-width: 640px) {
-  .modal {
-    display: none !important;
-  }
-
-  .modal-content {
-    margin: 1rem auto;
-    padding: 1.5rem;
-  }
-
   .media-kit-inline {
     display: block;
   }
