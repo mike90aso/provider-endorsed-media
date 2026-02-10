@@ -51,6 +51,32 @@
         margin-top: 1.75rem;
         text-align: center;
       }
+
+      .exclusive-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2.5rem;
+      }
+
+      .exclusive-card {
+        background: var(--navy-medium);
+        border-radius: 12px;
+        padding: 1.75rem;
+        border-left: 5px solid var(--orange);
+      }
+
+      .exclusive-card h3 {
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+        color: var(--white);
+      }
+
+      .exclusive-card p {
+        color: var(--text-light);
+        font-size: 1.05rem;
+        line-height: 1.7;
+      }
     </style>
   </head>
   <body>
@@ -143,14 +169,25 @@
         <section class="section">
           <div class="container">
             <h2 class="section-title">Exclusive Partner Opportunities</h2>
-            <p class="section-text">To protect engagement and maintain trust with our subscribers, Provider Endorsed Media limits the number of dispensaries featured at any given time.</p>
-            <p class="section-text">Select partners have the opportunity to secure exclusive placement, ensuring:</p>
-            <ul class="placement-list">
-              <li>No competing dispensaries featured in the same campaign window</li>
-              <li>Clear, uncluttered messaging to patients</li>
-              <li>Stronger brand recall and higher redemption rates</li>
-            </ul>
-            <p class="section-text">Exclusive partner availability is limited and offered on a market-by-market basis.</p>
+            <p class="section-text">We protect engagement by limiting how many dispensaries appear in each campaign window.</p>
+            <div class="exclusive-grid">
+              <div class="exclusive-card">
+                <h3>Limited Availability</h3>
+                <p>Exclusive partner slots are offered on a market-by-market basis to keep messaging trusted and effective.</p>
+              </div>
+              <div class="exclusive-card">
+                <h3>No Competing Offers</h3>
+                <p>Your promotion runs without nearby competitors in the same campaign window.</p>
+              </div>
+              <div class="exclusive-card">
+                <h3>Clear, Focused Messaging</h3>
+                <p>Patients see a single, uncluttered offer with simple redemption details.</p>
+              </div>
+              <div class="exclusive-card">
+                <h3>Higher Recall & Redemption</h3>
+                <p>Exclusivity drives stronger brand recall and better conversion rates.</p>
+              </div>
+            </div>
           </div>
         </section>
 
