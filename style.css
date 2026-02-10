@@ -534,6 +534,22 @@ nav a:hover {
   text-align: center;
 }
 
+.modal-success {
+  display: none;
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  border-radius: 10px;
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  color: var(--white);
+  font-weight: 600;
+  text-align: center;
+}
+
+.modal-success.is-visible {
+  display: block;
+}
+
 .media-kit-note {
   margin-top: 1.75rem;
 }

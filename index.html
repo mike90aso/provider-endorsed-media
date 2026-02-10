@@ -192,7 +192,7 @@
             <div class="modal-title">Request Media Kit</div>
             <button type="button" class="modal-close" id="close-media-kit" aria-label="Close">×</button>
           </div>
-          <form name="media-kit" method="POST" action="/#media-kit" data-netlify="true" data-netlify-honeypot="bot-field" class="modal-form">
+          <form name="media-kit" method="POST" action="/?submitted=media-kit#media-kit" data-netlify="true" data-netlify-honeypot="bot-field" class="modal-form">
             <input type="hidden" name="form-name" value="media-kit" />
             <p style="display: none;">
               <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
@@ -217,6 +217,9 @@
               <button class="cta-button" type="submit">Submit</button>
             </div>
           </form>
+          <div class="modal-success" id="media-kit-success" aria-live="polite">
+            Thanks, we got it!
+          </div>
         </div>
       </div>
 
@@ -231,6 +234,8 @@
       const openButton = document.getElementById("open-media-kit");
       const modal = document.getElementById("media-kit-modal");
       const closeButton = document.getElementById("close-media-kit");
+      const successMessage = document.getElementById("media-kit-success");
+      const urlParams = new URLSearchParams(window.location.search);
 
       const openModal = () => {
         modal.classList.add("is-open");
@@ -242,6 +247,7 @@
         modal.classList.remove("is-open");
         modal.setAttribute("aria-hidden", "true");
         document.body.style.overflow = "";
+        successMessage.classList.remove("is-visible");
       };
 
       openButton.addEventListener("click", openModal);
@@ -256,6 +262,11 @@
           closeModal();
         }
       });
+
+      if (urlParams.get("submitted") === "media-kit") {
+        openModal();
+        successMessage.classList.add("is-visible");
+      }
     </script>
   </body>
 </html>
