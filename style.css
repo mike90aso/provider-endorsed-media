@@ -483,6 +483,9 @@ nav a:hover {
   padding: 2rem;
   border: 2px solid rgba(245, 158, 11, 0.3);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  max-height: 90vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .modal-header {
@@ -552,6 +555,21 @@ nav a:hover {
 
 .media-kit-note {
   margin-top: 1.75rem;
+}
+
+@media (max-width: 640px) {
+  .modal {
+    align-items: flex-start;
+  }
+
+  .modal-content {
+    margin-top: 1rem;
+    padding: 1.5rem;
+  }
+
+  .modal-field input {
+    font-size: 16px;
+  }
 }
 
 .footer-logo {
