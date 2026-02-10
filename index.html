@@ -15,8 +15,8 @@
       </header>
       <nav>
         <div class="nav-content">
-          <a href="#contact">Request Media Kit</a>
-          <a href="#contact">Get in Touch</a>
+          <a href="#media-kit">Request Media Kit</a>
+          <a href="#media-kit">Get in Touch</a>
         </div>
       </nav>
 
@@ -163,7 +163,7 @@
         </section>
 
         <!-- CTA Section -->
-        <section class="section cta-section">
+        <section class="section cta-section" id="media-kit">
           <div class="container">
             <h2 class="section-title">Interested in Advertising With Provider Endorsed Media?</h2>
             <p class="section-text">Request our media kit to view:</p>
@@ -173,7 +173,7 @@
               <li>Campaign examples</li>
               <li>Availability & pricing</li>
             </ul>
-            <a href="#contact" class="cta-button">Request Media Kit</a>
+            <button type="button" class="cta-button" id="open-media-kit">Request Media Kit</button>
             <p class="section-text">Or schedule a 15 minute exploratory call below.</p>
             <iframe
               src="https://providerendorsedmedia.setmore.com/services/8c3a7633-6b28-4ede-8275-47d0ac248c65?step=time-slot&type=service&staff=6346318e-ca90-4152-b2be-148e56468ab3&staffSelected=true"
@@ -186,6 +186,40 @@
         </section>
       </main>
 
+      <div class="modal" id="media-kit-modal" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="modal-title">Request Media Kit</div>
+            <button type="button" class="modal-close" id="close-media-kit" aria-label="Close">×</button>
+          </div>
+          <form name="media-kit" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" class="modal-form">
+            <input type="hidden" name="form-name" value="media-kit" />
+            <p style="display: none;">
+              <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+            </p>
+            <div class="modal-field">
+              <label for="media-name">Name</label>
+              <input id="media-name" name="name" type="text" required />
+            </div>
+            <div class="modal-field">
+              <label for="media-company">Company</label>
+              <input id="media-company" name="company" type="text" required />
+            </div>
+            <div class="modal-field">
+              <label for="media-phone">Phone Number</label>
+              <input id="media-phone" name="phone" type="tel" required />
+            </div>
+            <div class="modal-field">
+              <label for="media-email">Email</label>
+              <input id="media-email" name="email" type="email" required />
+            </div>
+            <div class="modal-actions">
+              <button class="cta-button" type="submit">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
       <footer>
         <div class="container">
           <p>&copy; 2026 Provider Endorsed Media. All rights reserved.</p>
@@ -193,5 +227,35 @@
         </div>
       </footer>
     </div>
+    <script>
+      const openButton = document.getElementById("open-media-kit");
+      const modal = document.getElementById("media-kit-modal");
+      const closeButton = document.getElementById("close-media-kit");
+
+      const openModal = () => {
+        modal.classList.add("is-open");
+        modal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      };
+
+      const closeModal = () => {
+        modal.classList.remove("is-open");
+        modal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      };
+
+      openButton.addEventListener("click", openModal);
+      closeButton.addEventListener("click", closeModal);
+      modal.addEventListener("click", (event) => {
+        if (event.target === modal) {
+          closeModal();
+        }
+      });
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && modal.classList.contains("is-open")) {
+          closeModal();
+        }
+      });
+    </script>
   </body>
 </html>

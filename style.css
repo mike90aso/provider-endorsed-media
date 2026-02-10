@@ -460,6 +460,80 @@ nav a:hover {
   box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
 }
 
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 12, 18, 0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  z-index: 1000;
+}
+
+.modal.is-open {
+  display: flex;
+}
+
+.modal-content {
+  width: 100%;
+  max-width: 520px;
+  background: var(--navy-medium);
+  border-radius: 14px;
+  padding: 2rem;
+  border: 2px solid rgba(245, 158, 11, 0.3);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.modal-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.modal-close {
+  background: transparent;
+  border: none;
+  color: var(--text-light);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.modal-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.modal-field label {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--text-light);
+  margin-bottom: 0.4rem;
+}
+
+.modal-field input {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: var(--navy-dark);
+  color: var(--white);
+  font-size: 1rem;
+}
+
+.modal-actions {
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
 .footer-logo {
   display: block;
   max-width: 160px;
