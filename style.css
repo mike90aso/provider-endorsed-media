@@ -468,8 +468,6 @@ nav a:hover {
   align-items: center;
   justify-content: center;
   padding: 1.5rem;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
   z-index: 1000;
 }
 
@@ -485,6 +483,10 @@ nav a:hover {
   padding: 2rem;
   border: 2px solid rgba(245, 158, 11, 0.3);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  max-height: calc(100vh - 3rem);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  touch-action: manipulation;
 }
 
 .modal-header {
@@ -529,6 +531,7 @@ nav a:hover {
   background: var(--navy-dark);
   color: var(--white);
   font-size: 1rem;
+  touch-action: manipulation;
 }
 
 .modal-actions {
