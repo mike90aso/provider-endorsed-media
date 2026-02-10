@@ -217,9 +217,6 @@
               <button class="cta-button" type="submit">Submit</button>
             </div>
           </form>
-          <div class="modal-success" id="media-kit-success" aria-live="polite">
-            Thanks, we got it!
-          </div>
         </div>
       </div>
 
@@ -234,8 +231,6 @@
       const openButton = document.getElementById("open-media-kit");
       const modal = document.getElementById("media-kit-modal");
       const closeButton = document.getElementById("close-media-kit");
-      const successMessage = document.getElementById("media-kit-success");
-      const urlParams = new URLSearchParams(window.location.search);
 
       const openModal = () => {
         modal.classList.add("is-open");
@@ -247,7 +242,6 @@
         modal.classList.remove("is-open");
         modal.setAttribute("aria-hidden", "true");
         document.body.style.overflow = "";
-        successMessage.classList.remove("is-visible");
       };
 
       openButton.addEventListener("click", openModal);
@@ -262,11 +256,6 @@
           closeModal();
         }
       });
-
-      if (urlParams.get("submitted") === "media-kit") {
-        openModal();
-        successMessage.classList.add("is-visible");
-      }
     </script>
   </body>
 </html>
