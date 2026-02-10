@@ -5,6 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Provider Endorsed Media | Medical Marijuana</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+      .form-card {
+        background: var(--navy-medium);
+        border-radius: 12px;
+        padding: 2rem;
+        border: 2px solid rgba(245, 158, 11, 0.3);
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1rem 1.5rem;
+      }
+
+      .form-field {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .form-field label {
+        font-size: 0.95rem;
+        color: var(--text-light);
+      }
+
+      .form-field input,
+      .form-field textarea {
+        padding: 0.75rem 0.9rem;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        background: var(--navy-dark);
+        color: var(--white);
+        font-size: 1rem;
+      }
+
+      .form-field textarea {
+        min-height: 140px;
+        resize: vertical;
+      }
+
+      .form-actions {
+        margin-top: 1.75rem;
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
     <div class="page">
@@ -13,6 +60,11 @@
           <h1><span class="accent">Provider</span> Endorsed Media</h1>
         </div>
       </header>
+      <nav>
+        <div class="nav-content">
+          <a href="index.html">Home</a>
+        </div>
+      </nav>
 
       <main>
         <!-- Hero Section -->
@@ -146,6 +198,43 @@
             <h2 class="section-title">Put Your Deal in Front of 20,000+ Opted-In Patients</h2>
             <p class="section-text">If you want your promotion delivered directly to medical marijuana patients who have already opted in, Provider Endorsed Media is the channel.</p>
             <p class="section-text">Contact us to discuss availability and campaign scheduling.</p>
+            <div class="form-card">
+              <form name="mmj-contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="mmj-contact" />
+                <p style="display: none;">
+                  <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+                </p>
+                <div class="form-grid">
+                  <div class="form-field">
+                    <label for="full-name">Full Name</label>
+                    <input id="full-name" name="full-name" type="text" placeholder="Your name" required />
+                  </div>
+                  <div class="form-field">
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" placeholder="you@company.com" required />
+                  </div>
+                  <div class="form-field">
+                    <label for="phone">Phone</label>
+                    <input id="phone" name="phone" type="tel" placeholder="(000) 000-0000" />
+                  </div>
+                  <div class="form-field">
+                    <label for="dispensary">Dispensary Name</label>
+                    <input id="dispensary" name="dispensary" type="text" placeholder="Dispensary name" />
+                  </div>
+                  <div class="form-field">
+                    <label for="location">City / State</label>
+                    <input id="location" name="location" type="text" placeholder="City, ST" />
+                  </div>
+                  <div class="form-field">
+                    <label for="campaign">Promo Details</label>
+                    <textarea id="campaign" name="campaign" placeholder="Tell us about your promotion or goal."></textarea>
+                  </div>
+                </div>
+                <div class="form-actions">
+                  <button class="cta-button" type="submit">Send My Info</button>
+                </div>
+              </form>
+            </div>
           </div>
         </section>
       </main>
